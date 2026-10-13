@@ -34,12 +34,19 @@ public class AppUser {
     protected AppUser() {
     }
 
+    public AppUser(String email, String passwordHash) {
+        this.email = email;
+        this.passwordHash = passwordHash;
+    }
+
     @PrePersist
     protected void onCreate() {
         if (createdAt == null) {
             createdAt = Instant.now();
         }
     }
+
+
 
 
 }
